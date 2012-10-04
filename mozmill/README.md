@@ -252,7 +252,7 @@ better!
 
 The [MDN](http://developer.mozilla.org/en/Mozmill) pages are mirrored
 from the [mozmill repository](https://github.com/mozautomation/mozmill).
-See the notes on our [documentation strategy](./Documentation) .
+See the notes on our [documentation strategy](../documentation.txt) .
 
 
 # Resources
