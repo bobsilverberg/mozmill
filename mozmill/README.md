@@ -49,7 +49,7 @@ and accumulates and reports results.
 
 ## Running the command line client 
 
-After [installing](./Installation)
+After [installing](./docs/INSTALL.txt)
 the python package you can run Mozmill with the `mozmill` command.
 The `mozmill` command is run with one or more test (`-t mytest.js`) or 
 test manifest (`-m manifest.ini`):
@@ -93,7 +93,7 @@ This will do the following:
   (see: [resource://mozmill/modules/frame.js](https://github.com/mozautomation/mozmill/blob/master/mozmill/mozmill/extension/resource/modules/frame.js) )  
 
 - upon test run conclusion, the results will be reported by 
-  [pluggable event handlers](./EventHandlers)
+  [pluggable event handlers](./docs/event_handlers.txt)
 
 
 ## Example API Usage
@@ -115,14 +115,14 @@ The Mozmill python package is built of a number of different package dependencie
 - [mozinfo](/en/Mozinfo) : unified Mozilla interface to system information
 - [manifestparser](http://hg.mozilla.org/automation/ManifestDestiny) : parses test and addon manifests
 
-See [Architecture](./Architecture) for additional information on 
+See [Architecture](./docs/architecture.txt) for additional information on 
 program design.
 
 
 ## Event Dispatching
 
 Mozmill dispatches events from the JavaScript tests and modules to the
-python runner. See [Event Handlers](./EventHandlers) for how this works.
+python runner. See [Event Handlers](./docs/event_handlers.txt) for how this works.
 
 
 ## Getting Data to and From the Tests
@@ -130,7 +130,7 @@ python runner. See [Event Handlers](./EventHandlers) for how this works.
 It is desirable to transfer data to and from the JavaScript tests.  There
 are a few mechanisms to do so:
 
-- [event handlers](./EventHandlers) send data from the JavaScript
+- [event handlers](./docs/event_handlers.txt) send data from the JavaScript
   application layer to the python harness
 - the `persisted` object: a 
   [JSObject](https://github.com/mozautomation/mozmill/blob/master/jsbridge/jsbridge/jsobjects.py) 
@@ -150,12 +150,12 @@ See also
 ## Python Callbacks
 
 JavaScript tests may invoke arbitrary python using the `PythonCallbacks`
-[event handler](./EventHandlers) included with Mozmill. The 
+[event handler](./docs/event_handlers.txt) included with Mozmill. The 
 [mozmill JavaScript module](https://github.com/mozautomation/mozmill/blob/master/mozmill/mozmill/extension/resource/modules/mozmill.js)
 has the `firePythonCallback()` function, which takes the `filename`,
 the name of the `method` in the file, a list of ordered `args`, and a
 `kwargs` object.  This function will dispatch a
-`mozmill.firePythonCallback` [event](./EventHandlers) to the
+`mozmill.firePythonCallback` [event](./docs/event_handlers.txt) to the
 [mozmill.python_callbacks module](https://github.com/mozautomation/mozmill/blob/master/mozmill/mozmill/python_callbacks.py)
 which will import and fire the appropriate callback.  The `filename`
 is relative to the location of the JavaScript test file. Note that any
@@ -184,7 +184,7 @@ browser. There are two types of shutdown/restart events:
 - runner shutdown : the test tells the runner to shutdown or restart, 
   potentially giving a next test to run in the same file.
 
-Both cases fire an [event](./EventHandlers), `mozmill.userShutdown`,
+Both cases fire an [event](./docs/event_handlers.txt), `mozmill.userShutdown`,
 that lets the python harness anticipate the type of shutdown or
 restart.  The following parameters are sent with the event:
 
