@@ -29,7 +29,7 @@ Also the Mozilla Messaging team has an active project which handles
 # Installation
 
 Mozmill is available as an addon and a python package.
-See [the installation page](./Installation) for instructions for how
+See [the installation page](./docs/INSTALL.txt) for instructions for how
 to get Mozmill set up on your system.
 
 
